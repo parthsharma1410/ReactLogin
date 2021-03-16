@@ -1,83 +1,37 @@
-import React, { Component } from 'react'
+
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Home, Teacher, Student, TeacherSignup, TeacherLogin, StudentSignup, StudentLogin } from './Components';
 import './App.css';
-import "bootstrap/dist/css/bootstrap.min.css"
-import axios from "axios"
 
-class App extends Component {
-  constructor(){
-    super()
-    this.state = {
-      fullName: '',
-      email: '',
-      password:''
-    }
-    this.changeFullName = this.changeFullName.bind(this)
-    this.changeEmail = this.changeEmail.bind(this)
-    this.changePassword = this.changePassword.bind(this)
-    this.onSubmit = this.onSubmit.bind(this)
-  }
-  changeFullName(event){
-    this.setState({
-      fullName:event.target.value
-    })
-  }
-  changeEmail(event){
-    this.setState({
-      email:event.target.value
-    })
-  }
-  changePassword(event){
-    this.setState({
-      password:event.target.value
-    })
-  }
-  onSubmit(event){
-    event.preventDefault()
-    const registered = {
-      fullName: this.state.fullName,
-      email: this.state.email,
-      password: this.state.password
-    }
-    axios.post('http://localhost:4000/app/signup', registered)
-    .then(response => console.log(response))
-
-    this.setState({
-      fullName: '',
-      email: '',
-      password:''
-    })
-  }
-  render() {
-    return (
-      <div>
-        <div className="container">
-          <div className="form-div">
-            <form onSubmit={this.onSubmit}>
-              <input type='text'
-               placeholder='Enter full name' 
-               onChange={this.changeFullName} 
-               value={this.state.fullName} 
-               className="form-control form-group">
-               </input>
-               <input type='text'
-               placeholder='Enter email' 
-               onChange={this.changeEmail} 
-               value={this.state.email} 
-               className="form-control form-group">
-               </input>
-               <input type='password'
-               placeholder='Enter password' 
-               onChange={this.changePassword} 
-               value={this.state.password} 
-               className="form-control form-group">
-               </input>
-               <input type="submit" className="btn btn-primary btn-block" value="submit"></input>
-            </form>
-          </div>
-        </div>
-      </div>
-    )
-  }
+function App() {
+  return (
+    <div className="App">
+      <Router>
+        <Switch>
+          <Route path="/" exact component={() => <Home />} />
+        </Switch>
+        <Switch>
+          <Route path="/teacher" exact component={() => <Teacher />} />
+        </Switch>
+        <Switch>
+          <Route path="/student" exact component={() => <Student />} />
+        </Switch>
+        <Switch>
+          <Route path="/teachersignup" exact component={() => <TeacherSignup />} />
+        </Switch>
+        <Switch>
+          <Route path="/teacherlogin" exact component={() => <TeacherLogin />} />
+        </Switch>
+        <Switch>
+          <Route path="/studentsignup" exact component={() => <StudentSignup />} />
+        </Switch>
+        <Switch>
+          <Route path="/studentlogin" exact component={() => <StudentLogin />} />
+        </Switch> 
+      </Router>
+    </div>
+  );
 }
 
 export default App;
