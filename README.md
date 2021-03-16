@@ -1,4 +1,4 @@
-# ATTENDANCE MANAGEMENT SYSTEM
+# LOGIN SIGNUP USING REACT AND NODE
 A full stack web application, being built using Reactjs, Nodejs, and express. Uses mongoDb for Database connectivity
 ## Getting Started with Create React App
 
