@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "../App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
+import pic1 from '../img/pic1.PNG'
 
 class TeacherLogin extends Component {
   constructor() {
@@ -52,6 +53,9 @@ class TeacherLogin extends Component {
     return (
       <div>
         <div className="container">
+        <h1 class="font-weight-bold heading animate__animated animate__bounce">
+              Teacher Login
+            </h1>
           <div className="form-div">
             <form onSubmit={this.onSubmit}>
               <input
@@ -75,12 +79,15 @@ class TeacherLogin extends Component {
                 value={this.state.password}
                 className="form-control form-group"
               ></input>
-              <input
+              <button
                 type="submit"
-                className="btn btn-primary btn-block"
+                className="buttoncancel"
                 value="submit"
-              ></input>
+              >Submit</button>
             </form>
+          <div class="pic">
+            <img class="imgabout animate__animated animate__fadeIn animate__delay-1s image" src={pic1} alt="logo" /> 
+          </div>
           </div>
         </div>
       </div>

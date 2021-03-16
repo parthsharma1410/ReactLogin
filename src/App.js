@@ -7,12 +7,15 @@ import TeacherSignup from "./Components/TeacherSignup";
 import TeacherLogin from "./Components/TeacherLogin";
 import StudentSignup from "./Components/StudentSignup";
 import StudentLogin from "./Components/StudentLogin";
+import Navigation from "./Components/Navigation"
+import Dashboards from "./Components/Dashboards"
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
       <Router>
+        <Navigation />
         <Switch>
           <Route path="/" exact component={() => <Home />} />
         </Switch>
@@ -48,6 +51,13 @@ function App() {
             path="/studentlogin"
             exact
             component={() => <StudentLogin />}
+          />
+        </Switch>
+        <Switch>
+          <Route
+            path="/dashboard"
+            exact
+            component={() => <Dashboards />}
           />
         </Switch>
       </Router>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, withRouter } from "react-router-dom";
+import pic1 from '../img/pic1.PNG'
 
 function Teacher(props) {
   return (
@@ -17,16 +18,19 @@ function Teacher(props) {
                   Login
                 </Link>
               </button>
-              <p>OR</p>
+              </div>
+              <br />
+                {/*<p>OR</p>*/}
+                <div className="btn2">
               <button>
                 <Link class="buttonlink" to="/teachersignup">
-                  Sign Up
+                  SignUp
                 </Link>
               </button>
             </div>
           </div>
-          <div class="col-lg-7">
-            {/* <img class="imgabout animate__animated animate__fadeIn animate__delay-1s image" src={map1} alt="some aesthetic shit" /> */}
+          <div class="pic">
+             <img class="imgabout animate__animated animate__fadeIn animate__delay-1s image" src={pic1} alt="logo" />
           </div>
         </div>
       </div>

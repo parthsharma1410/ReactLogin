@@ -2,7 +2,7 @@ import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import pic1 from '../img/pic1.PNG'
 
-function Home(props) {
+function Dashboards(props) {
   return (
     <div className="home">
       <div class="container">
@@ -18,10 +18,7 @@ function Home(props) {
                   Teacher
                 </Link>
               </button>
-              </div>
-              <br />
-                {/*<p>OR</p>*/}
-                <div className="btn2">
+                <p>OR</p>
               <button>
                 <Link class="buttonlink" to="/student">
                   Student
@@ -38,4 +35,4 @@ function Home(props) {
   );
 }
 
-export default Home;
+export default Dashboards;

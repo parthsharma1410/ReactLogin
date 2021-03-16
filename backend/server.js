@@ -4,6 +4,7 @@ const mongoose = require('mongoose')
 const dotenv = require('dotenv')
 const routesUrls = require('./routes/routes')
 const cors = require('cors')
+const passport = require('passport')
 
 dotenv.config()
 
@@ -15,6 +16,7 @@ app.use(express.json())
 app.use(cors())
 app.use('/app', routesUrls)
 
-app.listen(4000, ()=>{
-    console.log("Server Running")
-})
+
+const PORT = process.env.PORT || 4000;
+
+app.listen(PORT, console.log(`Server started on port ${PORT}`));
