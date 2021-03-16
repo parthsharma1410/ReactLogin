@@ -1,8 +1,13 @@
-
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { Home, Teacher, Student, TeacherSignup, TeacherLogin, StudentSignup, StudentLogin } from './Components';
-import './App.css';
+import Home from "./Components/Home";
+import Teacher from "./Components/Teacher";
+import Student from "./Components/Student";
+import TeacherSignup from "./Components/TeacherSignup";
+import TeacherLogin from "./Components/TeacherLogin";
+import StudentSignup from "./Components/StudentSignup";
+import StudentLogin from "./Components/StudentLogin";
+import "./App.css";
 
 function App() {
   return (
@@ -18,17 +23,33 @@ function App() {
           <Route path="/student" exact component={() => <Student />} />
         </Switch>
         <Switch>
-          <Route path="/teachersignup" exact component={() => <TeacherSignup />} />
+          <Route
+            path="/teachersignup"
+            exact
+            component={() => <TeacherSignup />}
+          />
         </Switch>
         <Switch>
-          <Route path="/teacherlogin" exact component={() => <TeacherLogin />} />
+          <Route
+            path="/teacherlogin"
+            exact
+            component={() => <TeacherLogin />}
+          />
         </Switch>
         <Switch>
-          <Route path="/studentsignup" exact component={() => <StudentSignup />} />
+          <Route
+            path="/studentsignup"
+            exact
+            component={() => <StudentSignup />}
+          />
         </Switch>
         <Switch>
-          <Route path="/studentlogin" exact component={() => <StudentLogin />} />
-        </Switch> 
+          <Route
+            path="/studentlogin"
+            exact
+            component={() => <StudentLogin />}
+          />
+        </Switch>
       </Router>
     </div>
   );
